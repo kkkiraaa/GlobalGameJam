@@ -19,7 +19,7 @@ public class Folder : MonoBehaviour
     private int currentLevel = 0; // Текущий уровень
 
     private string[] sizes = { "20x20x20", "30x30x30", "40x40x40", "10x10x10", "15x15x15", "25x25x25", "35x35x35" };
-    private string[] colors = { "Только красные", "Не красные", "Только желтые", "Не желтые", "Только зеленые", "Не зеленые", "Красные и зеленые", "Красные и желтые", "Желтые и зеленые" };
+    private string[] colors = { "Красный", "Синий", "Зелёный", "Белый"};
     private string[] transparencies = { "20%", "40%", "60%", "80%" };
 
     private string generatedSize;
