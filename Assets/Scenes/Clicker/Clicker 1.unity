@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 108504760}
   - component: {fileID: 108504759}
   m_Layer: 5
-  m_Name: Button
+  m_Name: "\u041A\u043D\u043E\u043F\u043A\u0430 \u0442\u0430\u043F\u0430\u043B\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,9 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb73738b6398c574492627dfd7a74410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 1
   trrry: 0
-  total_money: 0
+  total_money: 1
   moneyText: {fileID: 1052347464}
   effect: {fileID: 1516380386}
   button: {fileID: 108504754}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 111674462}
   - component: {fileID: 111674461}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: "\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u043A\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,9 +807,9 @@ RectTransform:
   - {fileID: 1606960027}
   - {fileID: 108504755}
   - {fileID: 1052347463}
-  - {fileID: 1076772136}
   - {fileID: 111674457}
   - {fileID: 1087414965}
+  - {fileID: 1076772136}
   - {fileID: 2047917285}
   - {fileID: 313924458}
   - {fileID: 771028520}
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 313924463}
   - component: {fileID: 313924462}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: "\u0422\u0440\u0435\u0442\u044C\u0435 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 771028525}
   - component: {fileID: 771028524}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: "\u0427\u0435\u0442\u0432\u0435\u0440\u0442\u043E\u0435 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,13 +1492,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 771028524}
 --- !u!1 &782764432
 GameObject:
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 1052347467}
   - component: {fileID: 1052347466}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: "\u0421\u0447\u0435\u0442\u0447\u0438\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 1076772141}
   - component: {fileID: 1076772140}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: "\u041F\u0435\u0440\u0432\u043E\u0435 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2245,7 +2245,7 @@ GameObject:
   - component: {fileID: 1087414970}
   - component: {fileID: 1087414969}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: "\u0412\u044B\u0445\u043E\u0434"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2662,7 +2662,7 @@ GameObject:
   - component: {fileID: 1606960029}
   - component: {fileID: 1606960028}
   m_Layer: 5
-  m_Name: Image
+  m_Name: "\u0444\u043E\u043D"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2954,7 +2954,7 @@ GameObject:
   - component: {fileID: 2047917290}
   - component: {fileID: 2047917289}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: "\u0412\u0442\u043E\u0440\u043E\u0435 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
