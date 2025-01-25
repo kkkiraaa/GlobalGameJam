@@ -14,6 +14,7 @@ public class Folder : MonoBehaviour
     public Button trueButton; // Кнопка True
     public Button falseButton; // Кнопка False
 
+    public AudioSource audioSource;
 
     private int count = 0; // Счетчик
     private int currentLevel = 0; // Текущий уровень
@@ -28,7 +29,9 @@ public class Folder : MonoBehaviour
 
     private void Start()
     {
+        //Прооигрывание звука
         
+
         // Добавление обработчиков событий для кнопок
         trueButton.onClick.AddListener(OnTrueButtonClicked);
         falseButton.onClick.AddListener(OnFalseButtonClicked);
@@ -36,7 +39,6 @@ public class Folder : MonoBehaviour
         // Начать первый уровень
         StartLevel();
     }
-
     private void StartLevel()
     {
         
@@ -72,6 +74,7 @@ public class Folder : MonoBehaviour
 
     private void OnTrueButtonClicked()
     {
+        audioSource.Play();
         if (CheckTemplate())
         {
             count++; // Увеличиваем счетчик
@@ -86,6 +89,7 @@ public class Folder : MonoBehaviour
 
     private void OnFalseButtonClicked()
     {
+        audioSource.Play();
         if (!CheckTemplate())
         {
             count++; // Увеличиваем счетчик
