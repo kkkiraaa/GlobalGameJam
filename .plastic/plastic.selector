@@ -1,0 +1,4 @@
+repository "GlobalGameJam@Kirrra_h@cloud"
+  path "/"
+    br "/main"
+    co "/main"
