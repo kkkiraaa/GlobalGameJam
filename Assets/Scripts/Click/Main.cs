@@ -26,7 +26,7 @@ public class Main : MonoBehaviour
         PlayerPrefs.SetInt("total_money", total_money);
     }
 
-    public void ButtonClick1()
+    public void ButtonClick1Ach()
     {
         if (total_money >= 100 && trrry < 1)
         {
@@ -35,7 +35,29 @@ public class Main : MonoBehaviour
         }
         PlayerPrefs.SetInt("money", money);
         PlayerPrefs.SetInt("trrry", trrry);
-    } 
+    }
+
+    public void ButtonClickIdle()
+    {
+        if (money >= 500)
+        {
+            money -= 500;
+            StartCoroutine(IdleFarm());
+        }
+    }
+
+    IEnumerator IdleFarm()
+    {
+        yield return new WaitForSeconds(1);
+        money = money + 1;
+        PlayerPrefs.SetInt("money", money);
+        StartCoroutine(IdleFarm());
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     // Update is called once per frame
     void Update()
