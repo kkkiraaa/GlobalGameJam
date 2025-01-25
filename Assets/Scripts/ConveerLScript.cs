@@ -13,6 +13,8 @@ public class Folder : MonoBehaviour
     public Button trueButton; // Кнопка True
     public Button falseButton; // Кнопка False
 
+    public int count = 0; // Счетчик
+
     private string[] sizes = { "20x20x20", "30x30x30", "40x40x40", "10x10x10", "15x15x15", "25x25x25", "35x35x35" };
     private string[] colors = { "Только красные", "Не красные", "Только желтые", "Не желтые", "Только зеленые", "Не зеленые", "Красные и зеленые", "Красные и желтые", "Желтые и зеленые" };
     private string[] transparencies = { "20%", "40%", "60%", "80%" };
@@ -23,30 +25,39 @@ public class Folder : MonoBehaviour
 
     private void Start()
     {
-        GenerateTemplate();
+        // Генерация случайных значений
+        generatedSize = GeneratedSize();
+        generatedColor = GeneratedColor();
+        generatedTransparency = GeneratedTransparency();
 
         // Формирование шаблона
         string template = $"Шаблон:\nРазмер: {generatedSize}\nЦвет: {generatedColor}\nПрозрачность: {generatedTransparency}";
         deskText.text = template;
 
-        //Запуск подходов
-        for (int i = 0; i < 5; i++)
-        {
-            GenerateTemplate();
-        }
-        GenerateTemplate();
+        // Установка текста для отображения
+        sizeText.text = generatedSize;
+        colorText.text = generatedColor;
+        transparencyText.text = generatedTransparency;
+
+        // Добавление обработчиков событий для кнопок
         trueButton.onClick.AddListener(OnTrueButtonClicked);
         falseButton.onClick.AddListener(OnFalseButtonClicked);
     }
 
-    private void GenerateTemplate()
+    private string GeneratedSize()
     {
         // Генерация случайных значений
-        generatedSize = sizes[Random.Range(0, sizes.Length)];
-        generatedColor = colors[Random.Range(0, colors.Length)];
-        generatedTransparency = transparencies[Random.Range(0, transparencies.Length)];
+        return sizes[Random.Range(0, sizes.Length)];
+    }
 
+    private string GeneratedColor()
+    {
+        return colors[Random.Range(0, colors.Length)];
+    }
 
+    private string GeneratedTransparency()
+    {
+        return transparencies[Random.Range(0, transparencies.Length)];
     }
 
     private void OnTrueButtonClicked()
@@ -54,7 +65,8 @@ public class Folder : MonoBehaviour
         // Проверка на соответствие
         if (CheckTemplate())
         {
-            Debug.Log("Правильно! Вы нажали True.");
+            count++; // Увеличиваем счетчик
+            Debug.Log("Правильно! Вы нажали True. Счетчик: " + count);
         }
         else
         {
@@ -77,9 +89,9 @@ public class Folder : MonoBehaviour
 
     private bool CheckTemplate()
     {
-        // Здесь вы можете добавить логику для проверки соответствия
-        // Например, вы можете сравнить с заранее заданными значениями
-        // В данном случае просто возвращаем true для примера
-        return true; // Замените на вашу логику проверки
+        // Проверка соответствия сгенерированных значений
+        return (sizeText.text.CompareTo(generatedSize) == 0) &&
+               (colorText.text.CompareTo(generatedColor) == 0) &&
+               (transparencyText.text.CompareTo(generatedTransparency) == 0);
     }
 }
