@@ -10,10 +10,13 @@ public class Folder : MonoBehaviour
     public TextMeshProUGUI colorText; // Ссылка на TextMeshPro для Color
     public TextMeshProUGUI transparencyText; // Ссылка на TextMeshPro для Transparency
     public TextMeshProUGUI deskText; // Ссылка на TextMeshPro для отображения шаблона
+    public TextMeshProUGUI resultText; // Ссылка на TextMeshPro для отображения результата
     public Button trueButton; // Кнопка True
     public Button falseButton; // Кнопка False
 
-    public int count = 0; // Счетчик
+
+    private int count = 0; // Счетчик
+    private int currentLevel = 0; // Текущий уровень
 
     private string[] sizes = { "20x20x20", "30x30x30", "40x40x40", "10x10x10", "15x15x15", "25x25x25", "35x35x35" };
     private string[] colors = { "Только красные", "Не красные", "Только желтые", "Не желтые", "Только зеленые", "Не зеленые", "Красные и зеленые", "Красные и желтые", "Желтые и зеленые" };
@@ -25,6 +28,18 @@ public class Folder : MonoBehaviour
 
     private void Start()
     {
+        
+        // Добавление обработчиков событий для кнопок
+        trueButton.onClick.AddListener(OnTrueButtonClicked);
+        falseButton.onClick.AddListener(OnFalseButtonClicked);
+
+        // Начать первый уровень
+        StartLevel();
+    }
+
+    private void StartLevel()
+    {
+        
         // Генерация случайных значений
         generatedSize = GeneratedSize();
         generatedColor = GeneratedColor();
@@ -35,18 +50,13 @@ public class Folder : MonoBehaviour
         deskText.text = template;
 
         // Установка текста для отображения
-        sizeText.text = generatedSize;
-        colorText.text = generatedColor;
-        transparencyText.text = generatedTransparency;
-
-        // Добавление обработчиков событий для кнопок
-        trueButton.onClick.AddListener(OnTrueButtonClicked);
-        falseButton.onClick.AddListener(OnFalseButtonClicked);
+        sizeText.text = GeneratedSize();
+        colorText.text = GeneratedColor();
+        transparencyText.text = GeneratedTransparency();
     }
 
     private string GeneratedSize()
     {
-        // Генерация случайных значений
         return sizes[Random.Range(0, sizes.Length)];
     }
 
@@ -62,36 +72,67 @@ public class Folder : MonoBehaviour
 
     private void OnTrueButtonClicked()
     {
-        // Проверка на соответствие
         if (CheckTemplate())
         {
             count++; // Увеличиваем счетчик
-            Debug.Log("Правильно! Вы нажали True. Счетчик: " + count);
+            resultText.text =  ("Правильно! Вы нажали True. Счетчик: " + count);
         }
         else
         {
-            Debug.Log("Неправильно! Вы нажали True.");
+            resultText.text =  ("Неправильно! Вы нажали True.");
         }
+        NextLevel();
     }
 
     private void OnFalseButtonClicked()
     {
-        // Проверка на соответствие
         if (!CheckTemplate())
         {
-            Debug.Log("Правильно! Вы нажали False.");
+            count++; // Увеличиваем счетчик
+            resultText.text = ("Правильно! Вы нажали False.");
         }
         else
         {
-            Debug.Log("Неправильно! Вы нажали False.");
+            resultText.text = ("Неправильно! Вы нажали False.");
+        }
+        NextLevel();
+    }
+
+    private void NextLevel()
+    {
+        currentLevel++;
+
+        if (currentLevel < 5)
+        {
+            StartLevel(); // Начать следующий уровень
+        }
+        else
+        {
+            ShowResult(); // Показать результат после 5 уровней
         }
     }
 
     private bool CheckTemplate()
     {
-        // Проверка соответствия сгенерированных значений
         return (sizeText.text.CompareTo(generatedSize) == 0) &&
                (colorText.text.CompareTo(generatedColor) == 0) &&
                (transparencyText.text.CompareTo(generatedTransparency) == 0);
+    }
+
+    private void ShowResult()
+    {
+        string resultMessage = $"Твой рейтинг: {count}/5\n";
+
+        if (count >= 3)
+        {
+            resultMessage += "Экзамен сдан.";
+        }
+        else
+        {
+            resultMessage += "Экзамен не сдан.";
+        }
+
+        resultText.text = resultMessage; // Отображение результата на экране
+        Debug.Log(resultMessage); // Логирование результата
     }
 }
