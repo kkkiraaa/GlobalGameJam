@@ -6,28 +6,51 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Button firstButton;
+    public Button secondButton;
+    public Button thirdButton;
+    public Button cancelButton;
+    public Button exitButton; // Кнопка выхода
+
+    public AudioSource audioSource;
+
+    private void Start()
     {
-        
-    }
-    public void ToMenu1()
-    {
-        SceneManager.LoadScene(1);
+        // Добавляем слушатели для кнопок
+        firstButton.onClick.AddListener(() => OnButtonClick(1));
+        secondButton.onClick.AddListener(() => OnButtonClick(2));
+        thirdButton.onClick.AddListener(() => OnButtonClick(3));
+        cancelButton.onClick.AddListener(OnCancelButtonClick);
+        exitButton.onClick.AddListener(OnExitButtonClick); // 
     }
 
-    public void ToMenu2()
+    private void PlaySound()
     {
-        SceneManager.LoadScene(2);
+        if (audioSource != null)
+        {
+            audioSource.Play(); 
+        }
     }
 
-    public void ToMenu3()
+    private void OnButtonClick(int sceneIndex)
     {
-        SceneManager.LoadScene(3);
+        PlaySound(); 
+        SceneManager.LoadScene(sceneIndex); 
     }
-    // Update is called once per frame
+
+    private void OnCancelButtonClick()
+    {
+        PlaySound(); 
+        Application.Quit();
+    }
+
+    private void OnExitButtonClick()
+    {
+        PlaySound();
+        Application.Quit(); 
+    }
+
     void Update()
     {
-        
     }
 }
