@@ -8,6 +8,7 @@ public class Main : MonoBehaviour
 {
     [SerializeField] float money;
 
+
     public int trrry;
     public int total_money;
     public Text moneyText;
