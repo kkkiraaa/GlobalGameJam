@@ -687,10 +687,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0fcc2e052097d4fa4d30067cf085d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstButton: {fileID: 0}
-  secondButton: {fileID: 0}
-  thirdButton: {fileID: 0}
-  cancelButton: {fileID: 0}
+  firstButton: {fileID: 976885576}
+  secondButton: {fileID: 690492497}
+  thirdButton: {fileID: 962168286}
+  cancelButton: {fileID: 316783832}
   exitButton: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!1 &690492495
