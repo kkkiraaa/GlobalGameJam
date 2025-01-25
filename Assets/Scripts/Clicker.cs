@@ -86,6 +86,9 @@ public class Main : MonoBehaviour
         if (money >= 500)
         {
             money -= 500;
+            trrry++;
+            PlayerPrefs.SetInt("trrry", trrry);
+            PlayerPrefs.SetFloat("money", money);
             StartCoroutine(IdleFarm());
         }
     }
@@ -95,9 +98,7 @@ public class Main : MonoBehaviour
         yield return new WaitForSeconds(1);
         money = money + 1;
         total_money++;
-        trrry++;
         PlayerPrefs.SetFloat("money", money);
-        PlayerPrefs.SetInt("trrry", trrry);
         StartCoroutine(IdleFarm());
     }
 
