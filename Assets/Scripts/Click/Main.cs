@@ -6,15 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
-    [SerializeField] int money;
+    [SerializeField] float money;
 
     public int trrry;
     public int total_money;
     public Text moneyText;
+    public GameObject effect;
+    public GameObject button;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+    public GameObject button4;
 
     public void Start()
     {
-        money = PlayerPrefs.GetInt("money");
+        money = PlayerPrefs.GetFloat("money");
         total_money = PlayerPrefs.GetInt("total_money");
     }
 
@@ -22,19 +28,47 @@ public class Main : MonoBehaviour
     {
         money++;
         total_money++;
-        PlayerPrefs.SetInt("money", money);
+        PlayerPrefs.SetFloat("money", money);
         PlayerPrefs.SetInt("total_money", total_money);
+        Instantiate(effect, button.GetComponent<RectTransform>().position.normalized, Quaternion.identity);
     }
 
     public void ButtonClick1Ach()
     {
-        if (total_money >= 100 && trrry < 1)
+        if (total_money >= 100)
         {
             money += 50;
-            trrry++;
+            button1.SetActive(false);
         }
-        PlayerPrefs.SetInt("money", money);
-        PlayerPrefs.SetInt("trrry", trrry);
+        PlayerPrefs.SetFloat("money", money);
+    }
+
+    public void ButtonClick2Ach()
+    {
+        if (total_money >= 1000)
+        {
+            money += 500;
+            button2.SetActive(false);
+        }
+        PlayerPrefs.SetFloat("money", money);
+    }
+
+    public void ButtonClick3Ach()
+    {
+        if (trrry > 10)
+        {
+            money += 500;
+            button3.SetActive(false);
+        }
+        PlayerPrefs.SetFloat("money", money);
+    }
+
+    public void ButtonClick4Ach()
+    {
+        if (total_money >= 999999)
+        {
+            button4.SetActive(false);
+        }
     }
 
     public void ButtonClickIdle()
@@ -50,7 +84,10 @@ public class Main : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         money = money + 1;
-        PlayerPrefs.SetInt("money", money);
+        total_money++;
+        trrry++;
+        PlayerPrefs.SetFloat("money", money);
+        PlayerPrefs.SetInt("trrry", trrry);
         StartCoroutine(IdleFarm());
     }
 
