@@ -368,13 +368,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 108504759}
 --- !u!1 &111674456
 GameObject:
@@ -622,13 +622,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 111674461}
 --- !u!1 &155675566
 GameObject:
@@ -1054,13 +1054,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 313924462}
 --- !u!1 &413997227
 GameObject:
@@ -1968,13 +1968,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 1052347466}
 --- !u!1 &1076772135
 GameObject:
@@ -2222,13 +2222,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 1076772140}
 --- !u!1 &1087414964
 GameObject:
@@ -2476,13 +2476,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 1087414969}
 --- !u!1 &1156818434
 GameObject:
@@ -2645,6 +2645,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384628879}
   m_CullTransparentMesh: 1
+--- !u!1 &1516380386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4430742636887397720, guid: 37b481580e444c248b8b1859d5df110a, type: 3}
+  m_PrefabInstance: {fileID: 6275590388736991522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1606960026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,13 +3173,13 @@ MonoBehaviour:
   money: 0
   trrry: 0
   total_money: 0
-  moneyText: {fileID: 0}
-  effect: {fileID: 0}
-  button: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
+  moneyText: {fileID: 1052347464}
+  effect: {fileID: 1516380386}
+  button: {fileID: 108504754}
+  button1: {fileID: 1076772135}
+  button2: {fileID: 2047917284}
+  button3: {fileID: 313924457}
+  button4: {fileID: 771028519}
   audioSource: {fileID: 2047917289}
 --- !u!1001 &6275590388736991522
 PrefabInstance:
