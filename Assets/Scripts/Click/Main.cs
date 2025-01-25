@@ -18,14 +18,18 @@ public class Main : MonoBehaviour
     public GameObject button3;
     public GameObject button4;
 
+    public AudioSource audioSource;
+
     public void Start()
     {
+        audioSource.Play();
         money = PlayerPrefs.GetFloat("money");
         total_money = PlayerPrefs.GetInt("total_money");
     }
 
     public void ButtonClick()
     {
+        audioSource.Play();
         money++;
         total_money++;
         PlayerPrefs.SetFloat("money", money);
@@ -35,6 +39,7 @@ public class Main : MonoBehaviour
 
     public void ButtonClick1Ach()
     {
+        audioSource.Play();
         if (total_money >= 100)
         {
             money += 50;
@@ -45,6 +50,7 @@ public class Main : MonoBehaviour
 
     public void ButtonClick2Ach()
     {
+        audioSource.Play();
         if (total_money >= 1000)
         {
             money += 500;
@@ -55,6 +61,7 @@ public class Main : MonoBehaviour
 
     public void ButtonClick3Ach()
     {
+        audioSource.Play();
         if (trrry > 10)
         {
             money += 500;
@@ -65,6 +72,7 @@ public class Main : MonoBehaviour
 
     public void ButtonClick4Ach()
     {
+        audioSource.Play();
         if (total_money >= 999999)
         {
             button4.SetActive(false);
@@ -73,6 +81,7 @@ public class Main : MonoBehaviour
 
     public void ButtonClickIdle()
     {
+        audioSource.Play();
         if (money >= 500)
         {
             money -= 500;
