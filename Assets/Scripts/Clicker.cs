@@ -40,7 +40,6 @@ public class Main : MonoBehaviour
 
     public void ButtonClick1Ach()
     {
-        audioSource.Play();
         if (total_money >= 100)
         {
             money += 50;

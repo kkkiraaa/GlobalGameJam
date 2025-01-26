@@ -21,7 +21,6 @@ public class MenuScript : MonoBehaviour
         secondButton.onClick.AddListener(() => OnButtonClick(2));
         thirdButton.onClick.AddListener(() => OnButtonClick(3));
         cancelButton.onClick.AddListener(OnCancelButtonClick);
-        exitButton.onClick.AddListener(OnExitButtonClick); // 
     }
 
     private void PlaySound()
@@ -42,12 +41,6 @@ public class MenuScript : MonoBehaviour
     {
         PlaySound(); 
         Application.Quit();
-    }
-
-    private void OnExitButtonClick()
-    {
-        PlaySound();
-        Application.Quit(); 
     }
 
     void Update()

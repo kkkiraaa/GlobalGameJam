@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Folder : MonoBehaviour
@@ -112,7 +113,8 @@ public class Folder : MonoBehaviour
         }
         else
         {
-            ShowResult(); // Показать результат после 5 уровней
+            ShowResult();
+            SceneManager.LoadScene(0);// Показать результат после 5 уровней
         }
     }
 
