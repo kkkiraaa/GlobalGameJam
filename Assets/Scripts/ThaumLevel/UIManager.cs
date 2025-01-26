@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     public AudioSource audioSourceFailure;
     public AudioSource audioSourceWinning;
+    public AudioSource audioSourceInvalid;
     public AudioSource audioSource;
 
     void Start()
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
         genomeController.CurrentGene.Mutate(seed);
         indicatorManager.UpdateIndicators(genomeController.CurrentGene);
         bubbleRenderer.GenerateBubble();
+        audioSource.Play();
         CheckWinLoseConditions();
     }
 
@@ -67,12 +69,12 @@ public class UIManager : MonoBehaviour
     {
         if (isConsecutive)
         {
-            audioSourceWinning.Play();
+            audioSourceInvalid.Play();
             Debug.Log("Same combination consecutively");
         }
         else
         {
-            audioSourceFailure.Play();
+            audioSourceInvalid.Play();
             Debug.Log("This combination has been used maximum times");
         }
     }
@@ -114,6 +116,7 @@ public class UIManager : MonoBehaviour
     private void HandleWinCondition()
     {
         audioSourceWinning.Play();
+        new WaitForSeconds(1);
         Debug.Log("WIN CONDITION MET");
     }
 
@@ -121,6 +124,7 @@ public class UIManager : MonoBehaviour
     {
         audioSourceFailure.Play();
         Debug.Log("LOSE CONDITION MET");
+        new WaitForSeconds(1);
         SceneManager.LoadScene(0);
     }
 
