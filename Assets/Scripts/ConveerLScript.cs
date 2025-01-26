@@ -15,6 +15,7 @@ public class Folder : MonoBehaviour
     public Button trueButton; // Кнопка True
     public Button falseButton; // Кнопка False
 
+
     public AudioSource audioSource;
 
     private int count = 0; // Счетчик
@@ -49,7 +50,7 @@ public class Folder : MonoBehaviour
         generatedTransparency = GeneratedTransparency();
 
         // Формирование шаблона
-        string template = $"Шаблон:\nРазмер: {generatedSize}\nЦвет: {generatedColor}\nПрозрачность: {generatedTransparency}";
+        string template = $"Шаблон:\n\nРазмер: {generatedSize}\nЦвет: {generatedColor}\nПрозрачность: {generatedTransparency}";
         deskText.text = template;
 
         // Установка текста для отображения
@@ -79,11 +80,11 @@ public class Folder : MonoBehaviour
         if (CheckTemplate())
         {
             count++; // Увеличиваем счетчик
-            resultText.text =  ("Правильно! Вы нажали True. Счетчик: " + count);
+            resultText.text =  ("Правильно! Счетчик: " + count);
         }
         else
         {
-            resultText.text =  ("Неправильно! Вы нажали True.");
+            resultText.text =  ("Неправильно!");
         }
         NextLevel();
     }
@@ -94,11 +95,11 @@ public class Folder : MonoBehaviour
         if (!CheckTemplate())
         {
             count++; // Увеличиваем счетчик
-            resultText.text = ("Правильно! Вы нажали False.");
+            resultText.text = ("Правильно!");
         }
         else
         {
-            resultText.text = ("Неправильно! Вы нажали False.");
+            resultText.text = ("Неправильно!");
         }
         NextLevel();
     }
