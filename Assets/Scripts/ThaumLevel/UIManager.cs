@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
         lastUsedSeed = seed;
         genomeController.CurrentGene.Mutate(seed);
         indicatorManager.UpdateIndicators(genomeController.CurrentGene);
+        bubbleRenderer.GenerateBubble();
         CheckWinLoseConditions();
     }
 
