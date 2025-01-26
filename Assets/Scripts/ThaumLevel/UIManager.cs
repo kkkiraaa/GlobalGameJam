@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class UIManager : MonoBehaviour
     public BubbleRenderer bubbleRenderer;
     public IndicatorManager indicatorManager;
 
+    public AudioSource audioSourceFailure;
+    public AudioSource audioSourceWinning;
+    public AudioSource audioSource;
+
     void Start()
     {
         indicatorManager.UpdateIndicators(genomeController.CurrentGene);
@@ -20,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     public void SelectButton(int column, int row)
     {
+        audioSource.Play();
         selectedButtons[column] = row;
         UpdateColumnDisplay();
     }
@@ -60,12 +66,12 @@ public class UIManager : MonoBehaviour
     {
         if (isConsecutive)
         {
-            // TODO sound of consecutive attempt failure
+            audioSourceWinning.Play();
             Debug.Log("Same combination consecutively");
         }
         else
         {
-            // TODO sound of maximum uses failure
+            audioSourceFailure.Play();
             Debug.Log("This combination has been used maximum times");
         }
     }
@@ -106,14 +112,15 @@ public class UIManager : MonoBehaviour
 
     private void HandleWinCondition()
     {
-        // TODO Winning
+        audioSourceWinning.Play();
         Debug.Log("WIN CONDITION MET");
     }
 
     private void HandleLoseCondition()
     {
-        // TODO Losing
+        audioSourceFailure.Play();
         Debug.Log("LOSE CONDITION MET");
+        SceneManager.LoadScene(0);
     }
 
     private void UpdateColumnDisplay()
