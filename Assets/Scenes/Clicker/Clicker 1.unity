@@ -448,7 +448,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -702,7 +702,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -1876,7 +1876,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cf06ec66da3fbc54fbba2f5097f3b5ac, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8e27b327476778941b9d108efa6ff8a2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.153
   m_Pitch: 1
@@ -2304,7 +2304,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}
@@ -3262,7 +3262,7 @@ MonoBehaviour:
   trrry: 0
   total_money: 0
   moneyText: {fileID: 749672061}
-  effect: {fileID: 0}
+  effect: {fileID: 8581041119541475413, guid: 08279382c94cff342993c9ffb967ef9d, type: 3}
   button: {fileID: 108504754}
   button1: {fileID: 1076772135}
   button2: {fileID: 2047917284}

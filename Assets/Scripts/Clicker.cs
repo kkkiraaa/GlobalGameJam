@@ -23,7 +23,6 @@ public class Main : MonoBehaviour
 
     public void Start()
     {
-        audioSource.Play();
         money = PlayerPrefs.GetFloat("money");
         total_money = PlayerPrefs.GetInt("total_money");
     }
