@@ -62,7 +62,7 @@ public class Main : MonoBehaviour
     public void ButtonClick3Ach()
     {
         audioSource.Play();
-        if (trrry > 10)
+        if (trrry >=+ 10)
         {
             money += 500;
             button3.SetActive(false);
@@ -76,6 +76,7 @@ public class Main : MonoBehaviour
         if (total_money >= 999999)
         {
             button4.SetActive(false);
+            Application.Quit();
         }
     }
 
@@ -95,7 +96,7 @@ public class Main : MonoBehaviour
     IEnumerator IdleFarm()
     {
         yield return new WaitForSeconds(1);
-        money = money + 1;
+        money++; ;
         total_money++;
         PlayerPrefs.SetFloat("money", money);
         StartCoroutine(IdleFarm());
