@@ -15,24 +15,26 @@ public class Folder : MonoBehaviour
     public Button trueButton; // Кнопка True
     public Button falseButton; // Кнопка False
 
-
     public AudioSource audioSource;
 
     private int count = 0; // Счетчик
     private int currentLevel = 0; // Текущий уровень
 
     private string[] sizes = { "20x20x20", "30x30x30", "40x40x40", "10x10x10", "15x15x15", "25x25x25", "35x35x35" };
-    private string[] colors = { "Красный", "Синий", "Зелёный", "Белый"};
+    private string[] colors = { "Красный", "Синий", "Зелёный", "Белый" };
     private string[] transparencies = { "20%", "40%", "60%", "80%" };
 
     private string generatedSize;
     private string generatedColor;
     private string generatedTransparency;
 
+    private int totalLevels = 5; // Общее количество уровней
+    private List<int> matchingLevels = new List<int>(); // Уровни с совпадениями
+
     private void Start()
     {
-        //Прооигрывание звука
-        
+        // Генерация случайных уровней с совпадениями
+        GenerateMatchingLevels();
 
         // Добавление обработчиков событий для кнопок
         trueButton.onClick.AddListener(OnTrueButtonClicked);
@@ -41,9 +43,25 @@ public class Folder : MonoBehaviour
         // Начать первый уровень
         StartLevel();
     }
+
+    private void GenerateMatchingLevels()
+    {
+        // Генерация случайного количества уровней с совпадениями
+        int countMatchingLevels = Random.Range(1, totalLevels + 1); // Случайное количество совпадений от 1 до totalLevels
+
+        // Генерация уникальных индексов уровней
+        while (matchingLevels.Count < countMatchingLevels)
+        {
+            int randomLevel = Random.Range(0, totalLevels);
+            if (!matchingLevels.Contains(randomLevel))
+            {
+                matchingLevels.Add(randomLevel);
+            }
+        }
+    }
+
     private void StartLevel()
     {
-        
         // Генерация случайных значений
         generatedSize = GeneratedSize();
         generatedColor = GeneratedColor();
@@ -54,9 +72,19 @@ public class Folder : MonoBehaviour
         deskText.text = template;
 
         // Установка текста для отображения
-        sizeText.text = GeneratedSize();
-        colorText.text = GeneratedColor();
-        transparencyText.text = GeneratedTransparency();
+        if (matchingLevels.Contains(currentLevel)) // Проверка, совпадает ли уровень с шаблоном
+        {
+            sizeText.text = generatedSize;
+            colorText.text = generatedColor;
+            transparencyText.text = generatedTransparency;
+        }
+        else
+        {
+            // Генерация случайных значений, которые не совпадают с шаблоном
+            sizeText.text = GeneratedSize();
+            colorText.text = GeneratedColor();
+            transparencyText.text = GeneratedTransparency();
+        }
     }
 
     private string GeneratedSize()
@@ -80,11 +108,11 @@ public class Folder : MonoBehaviour
         if (CheckTemplate())
         {
             count++; // Увеличиваем счетчик
-            resultText.text =  ("Правильно! Счетчик: " + count);
+            resultText.text = ("Правильно! Счетчик: " + count);
         }
         else
         {
-            resultText.text =  ("Неправильно!");
+            resultText.text = ("Неправильно!");
         }
         NextLevel();
     }
@@ -108,14 +136,14 @@ public class Folder : MonoBehaviour
     {
         currentLevel++;
 
-        if (currentLevel < 5)
+        if (currentLevel < totalLevels)
         {
             StartLevel(); // Начать следующий уровень
         }
         else
         {
             ShowResult();
-            SceneManager.LoadScene(0);// Показать результат после 5 уровней
+            SceneManager.LoadScene(0); // Показать результат после всех уровней
         }
     }
 
@@ -128,7 +156,7 @@ public class Folder : MonoBehaviour
 
     private void ShowResult()
     {
-        string resultMessage = $"Твой рейтинг: {count}/5\n";
+        string resultMessage = $"Твой рейтинг: {count}/{totalLevels}\n";
 
         if (count >= 3)
         {
@@ -143,3 +171,5 @@ public class Folder : MonoBehaviour
         Debug.Log(resultMessage); // Логирование результата
     }
 }
+
+
